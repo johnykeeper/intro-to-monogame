@@ -9,6 +9,7 @@ namespace intro_to_monogame
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Texture2D housesTexture;
         Texture2D patrickTexture;
         Texture2D spongebobTexture;
 
@@ -36,6 +37,7 @@ namespace intro_to_monogame
 
             // TODO: use this.Content to load your game content here
 
+            housesTexture = Content.Load<Texture2D>("houses");
             patrickTexture = Content.Load<Texture2D>("patrick");
             spongebobTexture = Content.Load<Texture2D>("spongebob");
         }
@@ -56,11 +58,16 @@ namespace intro_to_monogame
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(patrickTexture, new Vector2(400,100), Color.White);
+            _spriteBatch.Draw(housesTexture, new Vector2(0,0), Color.White);
+            _spriteBatch.End();
+
+
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(patrickTexture, new Vector2(0,200), Color.White);
             _spriteBatch.End();
 
             _spriteBatch.Begin();
-            _spriteBatch.Draw(spongebobTexture, new Vector2(0, 250), Color.White);
+            _spriteBatch.Draw(spongebobTexture, new Vector2(450, 250), Color.White);
             _spriteBatch.End();
 
             base.Draw(gameTime);
